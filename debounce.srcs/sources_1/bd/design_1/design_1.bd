@@ -1,0 +1,187 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x2EBEFCD94F7907A6",
+      "device": "xc7s50csga324-1",
+      "gen_directory": "../../../../debounce.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "vio_0": "",
+      "debounce_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "in1_0": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "vio_0": {
+        "vlnv": "xilinx.com:ip:vio:3.0",
+        "ip_revision": "27",
+        "xci_name": "design_1_vio_0_0",
+        "xci_path": "ip\\design_1_vio_0_0\\design_1_vio_0_0.xci",
+        "inst_hier_path": "vio_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_NUM_PROBE_IN": {
+            "value": "5"
+          },
+          "C_NUM_PROBE_OUT": {
+            "value": "1"
+          },
+          "C_PROBE_IN1_WIDTH": {
+            "value": "2"
+          },
+          "C_PROBE_IN2_WIDTH": {
+            "value": "27"
+          },
+          "C_PROBE_IN3_WIDTH": {
+            "value": "2"
+          }
+        }
+      },
+      "debounce_0": {
+        "vlnv": "xilinx.com:module_ref:debounce:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_debounce_0_0",
+        "xci_path": "ip\\design_1_debounce_0_0\\design_1_debounce_0_0.xci",
+        "inst_hier_path": "debounce_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "debounce",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in1": {
+            "direction": "I"
+          },
+          "clk1": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "out1": {
+            "direction": "O"
+          },
+          "q": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "counter": {
+            "direction": "O",
+            "left": "26",
+            "right": "0"
+          },
+          "nq": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "F": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "vio_0/clk",
+          "debounce_0/clk1"
+        ]
+      },
+      "debounce_0_F": {
+        "ports": [
+          "debounce_0/F",
+          "vio_0/probe_in4"
+        ]
+      },
+      "debounce_0_counter": {
+        "ports": [
+          "debounce_0/counter",
+          "vio_0/probe_in2"
+        ]
+      },
+      "debounce_0_nq": {
+        "ports": [
+          "debounce_0/nq",
+          "vio_0/probe_in3"
+        ]
+      },
+      "debounce_0_out1": {
+        "ports": [
+          "debounce_0/out1",
+          "vio_0/probe_in0"
+        ]
+      },
+      "debounce_0_q": {
+        "ports": [
+          "debounce_0/q",
+          "vio_0/probe_in1"
+        ]
+      },
+      "in1_0_1": {
+        "ports": [
+          "in1_0",
+          "debounce_0/in1"
+        ]
+      },
+      "vio_0_probe_out0": {
+        "ports": [
+          "vio_0/probe_out0",
+          "debounce_0/rst"
+        ]
+      }
+    }
+  }
+}
